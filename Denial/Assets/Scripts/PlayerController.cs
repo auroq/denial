@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -32,6 +31,16 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
+    {
+        HandleMovement();
+        HandleLooking();
+    }
+
+    void HandleLooking()
+    {
+    }
+
+    void HandleMovement()
     {
         var codes = Helpers.Input.GetAnyKeys(KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D);
         if (codes.Any())

@@ -1,6 +1,3 @@
-﻿using System.Linq;
-using UnityEngine;
-
-public static class Extensions 
+﻿public static class Extensions 
 {
 }

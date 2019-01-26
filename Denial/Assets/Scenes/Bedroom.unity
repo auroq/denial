@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -506,6 +507,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f24e6fa90db41e298bf4f88a7879ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1890229697}
 --- !u!1 &586093918
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +551,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4.5, y: 1, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &586093920
 MeshRenderer:
@@ -827,6 +841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369271d5b0d2299afbb659e8d726f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1890229703}
+  mouseSensitivity: 100
+  clampAngle: 45
   clickableLayer:
     serializedVersion: 2
     m_Bits: 512
