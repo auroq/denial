@@ -27,6 +27,12 @@ public class MouseManager : MonoBehaviour
             {
                 Cursor.SetCursor(target, new Vector2(16,16),CursorMode.Auto);
             }
+
+            if (Input.GetMouseButton(0) && door)
+            {
+                var doorway = hit.collider.gameObject.transform;
+                //TODO open door animation and load new scene
+            }
         }
         else
         {
