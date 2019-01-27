@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1148943771935129116}
   - component: {fileID: 1148943771935931964}
   - component: {fileID: 1148943771936898172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 1148943771935129118}
   - component: {fileID: 1148943771935931966}
   - component: {fileID: 1148943771936898174}
-  m_Layer: 0
-  m_Name: Door2Frame
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: Door
+  m_TagString: Doorway
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148943771934695998}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.42, y: 0.12705567, z: -1.2414397}
   m_LocalScale: {x: 185.59026, y: 303.45505, z: 457.27908}
   m_Children:
