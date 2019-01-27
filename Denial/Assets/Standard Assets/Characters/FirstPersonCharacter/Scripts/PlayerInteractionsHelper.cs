@@ -77,9 +77,18 @@ public class PlayerInteractionsHelper
     {
         //doorway.transform.Rotate(Vector3.right, 45f, Space.Self);
         PerformToggleableFunction(doorway.GetInstanceID(), 
-            () => doorway.transform.Rotate(Vector3.up, 90f, Space.Self),
-            () => doorway.transform.Rotate(Vector3.up, -90f, Space.Self)
-        );
+            () =>
+            {
+                var scale = doorway.transform.localScale;
+                doorway.transform.localScale = new Vector3(scale.z, scale.y, scale.x); // Swap scaling on rotation
+                doorway.transform.RotateAround(doorway.transform.up, Vector3.up, -90f);
+            },
+            () =>
+            {
+                var scale = doorway.transform.localScale;
+                doorway.transform.localScale = new Vector3(scale.z, scale.y, scale.x); // Swap scaling on rotation
+                doorway.transform.RotateAround(doorway.transform.up, Vector3.up, 90f);
+            });
     }
 
     private void HandleLamp(GameObject lamp)
