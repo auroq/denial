@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1148943771936898172}
   m_Layer: 9
   m_Name: Door2
-  m_TagString: Untagged
+  m_TagString: Doorway
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1148943771935129118}
   - component: {fileID: 1148943771935931966}
   - component: {fileID: 1148943771936898174}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Door
   m_TagString: Doorway
   m_Icon: {fileID: 0}
