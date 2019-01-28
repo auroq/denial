@@ -8,6 +8,7 @@ TagManager:
   - Doorway
   - Stove
   - TV
+  - Couch
   layers:
   - Default
   - TransparentFX

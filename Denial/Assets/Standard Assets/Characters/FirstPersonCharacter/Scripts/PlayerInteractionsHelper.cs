@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Timers;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Clickables
 {
     Doorway = 0,
     Lamp = 1,
     Stove = 2,
-    TV = 3
+    TV = 3,
+    Couch = 4
 }
 
 [Serializable]
@@ -15,7 +20,7 @@ public class PlayerInteractionsHelper
 {
     public float interactionDebounce = .5f;
 
-    public GameObject TVMorph;
+    public List<GameObject> Morphs;
     
     private ConcurrentDictionary<int, DateTime> Interactions;
     private ConcurrentDictionary<int, bool> Toggles;
@@ -74,7 +79,8 @@ public class PlayerInteractionsHelper
                     HandleStove(gameObject);
                     break;
                 case nameof(Clickables.TV):
-                    HandleTV(gameObject);
+                case nameof(Clickables.Couch):
+                    HandleMorphable(gameObject);
                     break;
                 default:
                     return;
@@ -111,9 +117,26 @@ public class PlayerInteractionsHelper
         stove.SetActive(false);
     }
 
-    private void HandleTV(GameObject tv)
+    private void HandleMorphable(GameObject morphable)
     {
-        tv.SetActive(false);
-        TVMorph.SetActive(true);
+        ToggleMorph(morphable);
+        
+//        var morphTimer = new Timer();
+//        morphTimer.Elapsed+=new ElapsedEventHandler((source, e) => MorphEvent(source, e, () => ToggleMorph(morphable)));
+//        morphTimer.Interval=5000;
+//        morphTimer.Enabled=true;
+ 
     }
+
+    private void ToggleMorph(GameObject morphable)
+    {
+        var morph = Morphs.Single(m => m.tag.Equals(morphable.tag));
+        morphable.SetActive(!morphable.activeInHierarchy);
+        morph.SetActive(!morph.activeInHierarchy);
+    }
+
+//    private void MorphEvent(object source, ElapsedEventArgs e, Action action)
+//    {
+//        action.Invoke();
+//    }
 }
