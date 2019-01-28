@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
