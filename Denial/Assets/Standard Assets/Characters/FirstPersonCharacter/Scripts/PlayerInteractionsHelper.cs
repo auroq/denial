@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.XR.WSA.Input;
 
@@ -8,12 +9,16 @@ public enum Clickables
 {
     Doorway = 0,
     Lamp = 1,
+    Stove = 2,
+    TV = 3
 }
 
 [Serializable]
 public class PlayerInteractionsHelper
 {
     public float interactionDebounce = .5f;
+
+    public GameObject TVMorph;
     
     private ConcurrentDictionary<int, DateTime> Interactions;
     private ConcurrentDictionary<int, bool> Toggles;
@@ -67,6 +72,12 @@ public class PlayerInteractionsHelper
                 case nameof(Clickables.Lamp):
                     HandleLamp(gameObject);
                     break;
+                case nameof(Clickables.Stove):
+                    HandleStove(gameObject);
+                    break;
+                case nameof(Clickables.TV):
+                    HandleTV(gameObject);
+                    break;
                 default:
                     return;
             }
@@ -95,5 +106,16 @@ public class PlayerInteractionsHelper
     {
         var light = lamp.GetComponentInChildren<Light>();
         light.enabled = !light.enabled;
+    }
+
+    private void HandleStove(GameObject stove)
+    {
+        stove.SetActive(false);
+    }
+
+    private void HandleTV(GameObject tv)
+    {
+        tv.SetActive(false);
+        TVMorph.SetActive(true);
     }
 }
