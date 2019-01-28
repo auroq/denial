@@ -6,6 +6,7 @@ public class CrosshairManager : MonoBehaviour
     [SerializeField] private PlayerInteractionsHelper PlayerInteractionsHelper;
     
     public LayerMask clickableLayer;
+    public int interactionDistance = 3;
 
         // Swap Cursors per object
     public Sprite pointer;
@@ -32,7 +33,7 @@ public class CrosshairManager : MonoBehaviour
     void HandleCrosshair()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 2, clickableLayer.value))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, interactionDistance, clickableLayer.value))
         {
             if (hit.collider.gameObject.tag.Equals(nameof(Clickables.Doorway)))
                 image.sprite = doorway;
@@ -48,7 +49,7 @@ public class CrosshairManager : MonoBehaviour
     void HandleInteraction()
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 2, clickableLayer.value)
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, interactionDistance, clickableLayer.value)
             && Input.GetMouseButton(0))
         {
             PlayerInteractionsHelper.HandleInteraction(hit.collider.gameObject);

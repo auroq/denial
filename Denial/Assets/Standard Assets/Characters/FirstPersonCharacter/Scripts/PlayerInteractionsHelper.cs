@@ -25,6 +25,7 @@ public class PlayerInteractionsHelper
     {
         Interactions = new ConcurrentDictionary<int, DateTime>();
         Toggles = new ConcurrentDictionary<int, bool>();
+//        TVMorph.SetActive(false);
     }
 
     private void PerformToggleableFunction(int objectId, Action onTrue, Action onFalse)
