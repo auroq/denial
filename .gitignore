@@ -5,6 +5,8 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+[Dd]ist/
+
 # Exclude 3rd party libraries installed from the assets store
 [Aa]ssets/Asset Store Resources/
 
